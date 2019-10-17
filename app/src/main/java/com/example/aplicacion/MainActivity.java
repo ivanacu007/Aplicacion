@@ -42,7 +42,7 @@ public class MainActivity extends AppCompatActivity {
     private static ViewPager mPager;
     private static int currentPage = 0;
     private static int NUM_PAGES = 0;
-    private ArrayList<ImageModel> imageModelArrayList;
+//    private ArrayList<ImageModel> imageModelArrayList;
     private int[] myImageList = new int[]{R.drawable.ic_slide1, R.drawable.ic_slide2,
             R.drawable.ic_slide3};
 
@@ -54,9 +54,9 @@ public class MainActivity extends AppCompatActivity {
         Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
         setActionBarTitle("Aplicacion");
-        vp = findViewById(R.id.promoSlide);
-        ViewPagerAdapter viewPagerAdapter = new ViewPagerAdapter(this);
-        vp.setAdapter(viewPagerAdapter);
+//        vp = findViewById(R.id.promoSlide);
+//        ViewPagerAdapter viewPagerAdapter = new ViewPagerAdapter(this);
+//        vp.setAdapter(viewPagerAdapter);
 
         CardView card = findViewById(R.id.cardFood);
         CardView cardServ = findViewById(R.id.cardServices);
@@ -105,71 +105,6 @@ public class MainActivity extends AppCompatActivity {
 //        NavigationUI.setupActionBarWithNavController(this, navController, mAppBarConfiguration);
 //        NavigationUI.setupWithNavController(navigationView, navController);
     }
-//    private ArrayList<ImageModel> populateList(){
-//
-//        ArrayList<ImageModel> list = new ArrayList<>();
-//
-//        for(int i = 0; i < 6; i++){
-//            ImageModel imageModel = new ImageModel();
-//            imageModel.setImage_drawable(myImageList[i]);
-//            list.add(imageModel);
-//        }
-//
-//        return list;
-//    }
-//
-//    private void init() {
-//
-//        mPager = (ViewPager) findViewById(R.id.promoSlide);
-//        mPager.setAdapter(new SlidingImage_Adapter(MainActivity.this,imageModelArrayList));
-//
-//        CirclePageIndicator indicator = (CirclePageIndicator)
-//                findViewById(R.id.indicator);
-//
-//        indicator.setViewPager(mPager);
-//
-//        final float density = getResources().getDisplayMetrics().density;
-//
-////Set circle indicator radius
-//        indicator.setRadius(5 * density);
-//
-//        NUM_PAGES =imageModelArrayList.size();
-//
-//        // Auto start of viewpager
-//        final Handler handler = new Handler();
-//        final Runnable Update = new Runnable() {
-//            public void run() {
-//                if (currentPage == NUM_PAGES) {
-//                    currentPage = 0;
-//                }
-//                mPager.setCurrentItem(currentPage++, true);
-//            }
-//        };
-//        Timer swipeTimer = new Timer();
-//        swipeTimer.schedule(new TimerTask() {
-//            @Override
-//            public void run() {
-//                handler.post(Update);
-//            }
-//        }, 3000, 3000);
-//
-//        // Pager listener over indicator
-//        indicator.setOnPageChangeListener(new ViewPager.OnPageChangeListener() {
-//
-//            @Override
-//            public void onPageSelected(int position) {
-//                currentPage = position;
-//            }
-//
-//            @Override
-//            public void onPageScrolled(int pos, float arg1, int arg2) {
-//            }
-//
-//            @Override
-//            public void onPageScrollStateChanged(int pos) {
-//            }
-//        });
-//    }
 
 
     public void openFragment(Integer valor) {
