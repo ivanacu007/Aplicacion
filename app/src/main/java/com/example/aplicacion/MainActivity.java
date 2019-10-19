@@ -19,7 +19,7 @@ import androidx.navigation.ui.AppBarConfiguration;
 import androidx.navigation.ui.NavigationUI;
 
 import com.google.android.material.navigation.NavigationView;
-import com.viewpagerindicator.CirclePageIndicator;
+
 
 import androidx.drawerlayout.widget.DrawerLayout;
 
@@ -29,34 +29,33 @@ import androidx.viewpager.widget.ViewPager;
 
 import android.view.Menu;
 
-import java.util.ArrayList;
-import java.util.Timer;
-import java.util.TimerTask;
+import technolifestyle.com.imageslider.FlipperLayout;
+import technolifestyle.com.imageslider.FlipperView;
 
 public class MainActivity extends AppCompatActivity {
 
     private AppBarConfiguration mAppBarConfiguration;
     private ViewPager vp;
     private int tarjeta = 0;
-
-    private static ViewPager mPager;
-    private static int currentPage = 0;
-    private static int NUM_PAGES = 0;
-//    private ArrayList<ImageModel> imageModelArrayList;
-    private int[] myImageList = new int[]{R.drawable.ic_slide1, R.drawable.ic_slide2,
-            R.drawable.ic_slide3};
+    private FlipperLayout flipperLayout;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        int img [] = {R.drawable.hamburguer, R.drawable.excavadora, R.drawable.cake};
 
         Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
         setActionBarTitle("Aplicacion");
-//        vp = findViewById(R.id.promoSlide);
-//        ViewPagerAdapter viewPagerAdapter = new ViewPagerAdapter(this);
-//        vp.setAdapter(viewPagerAdapter);
+        flipperLayout = findViewById(R.id.flipper);
+
+        for(int i = 0; i < img.length; i++){
+            FlipperView flipperView = new FlipperView(getBaseContext());
+            flipperView.setImageDrawable(img[i]);
+            flipperLayout.addFlipperView(flipperView);
+        }
+
 
         CardView card = findViewById(R.id.cardFood);
         CardView cardServ = findViewById(R.id.cardServices);
@@ -75,10 +74,6 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
-//        imageModelArrayList = new ArrayList<>();
-//        imageModelArrayList = populateList();
-//
-//        init();
 
         FloatingActionButton fab = findViewById(R.id.fab);
         fab.setOnClickListener(new View.OnClickListener() {
