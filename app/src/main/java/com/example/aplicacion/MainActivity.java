@@ -101,16 +101,16 @@ public class MainActivity extends AppCompatActivity {
 //        NavigationUI.setupWithNavController(navigationView, navController);
     }
 
-
     public void openFragment(Integer valor) {
         SubMenu fragment = new SubMenu();
         SubMenuServ fragmentServ = new SubMenuServ();
+        Comida comida = new Comida();
         FragmentManager fragmentManager = getSupportFragmentManager();
         FragmentTransaction transaction = fragmentManager.beginTransaction();
         if(valor == 1){
             transaction.setCustomAnimations(R.anim.enter_to_right, R.anim.exit_to_right, R.anim.enter_to_right, R.anim.exit_to_right);
             transaction.addToBackStack(null);
-            transaction.add(R.id.fragment_container, fragment, "SUB_MENU").commit();
+            transaction.add(R.id.fragment_container, fragment, "SUB_MEN").commit();
         }
         if(valor == 2){
             transaction.setCustomAnimations(R.anim.enter_to_right, R.anim.exit_to_right, R.anim.enter_to_right, R.anim.exit_to_right);
@@ -120,12 +120,12 @@ public class MainActivity extends AppCompatActivity {
 
     }
 
-    @Override
-    public boolean onCreateOptionsMenu(Menu menu) {
-        // Inflate the menu; this adds items to the action bar if it is present.
-        getMenuInflater().inflate(R.menu.main, menu);
-        return true;
-    }
+//    @Override
+//    public boolean onCreateOptionsMenu(Menu menu) {
+//        // Inflate the menu; this adds items to the action bar if it is present.
+//        getMenuInflater().inflate(R.menu.main, menu);
+//        return true;
+//    }
 
     @Override
     public boolean onSupportNavigateUp() {
