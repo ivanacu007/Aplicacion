@@ -137,7 +137,7 @@
                         android:layout_marginBottom="24dp"
                         android:fontFamily="@font/lato_bold"
                         android:text="Servicios"
-                        android:textColor="#FFF"
+                        android:textColor="#FFF05"
                         android:textSize="@dimen/textTitles"
                         android:textStyle="bold"
                         app:layout_constraintBottom_toBottomOf="parent"
