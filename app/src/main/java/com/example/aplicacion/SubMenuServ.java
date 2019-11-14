@@ -66,8 +66,8 @@ public class SubMenuServ extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         View vista = inflater.inflate(R.layout.fragment_sub_menu2, container, false);
-        ((MainActivity) getActivity())
-                .setActionBarTitle("Servicios");
+//        ((MainActivity) getActivity())
+//                .setActionBarTitle("Servicios");
         return vista;
     }
 

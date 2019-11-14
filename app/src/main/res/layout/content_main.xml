@@ -79,7 +79,7 @@
                     app:layout_constraintTop_toBottomOf="@+id/divider2">
 
                     <FrameLayout
-                        android:layout_width="15dp"
+                        android:layout_width="10dp"
                         android:layout_height="match_parent"
                         android:background="@color/colorAccent"></FrameLayout>
 
@@ -131,7 +131,7 @@
                     app:layout_constraintTop_toBottomOf="@+id/textView3">
 
                     <FrameLayout
-                        android:layout_width="15dp"
+                        android:layout_width="10dp"
                         android:layout_height="match_parent"
                         android:background="@color/colorAccent"></FrameLayout>
 
@@ -186,7 +186,7 @@
                     app:layout_constraintTop_toBottomOf="@+id/textView4">
 
                     <FrameLayout
-                        android:layout_width="15dp"
+                        android:layout_width="10dp"
                         android:layout_height="match_parent"
                         android:background="@color/colorAccent"></FrameLayout>
 
@@ -229,7 +229,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="16dp"
-                    android:text="Alimentos y bebidas"
+                    android:text="@string/comidaM"
                     android:textAppearance="@style/TextAppearance.AppCompat.Body1"
                     android:textColor="@color/colorSecondaryText"
                     android:textSize="@dimen/textPrimary"
@@ -267,7 +267,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="16dp"
-                    android:text="Otros servicios"
+                    android:text="@string/OtherServ"
                     android:textColor="@color/colorSecondaryText"
                     android:textSize="@dimen/textPrimary"
                     android:textStyle="bold"
@@ -316,9 +316,9 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="16dp"
-                    android:text="Servicio de taxis"
-                    android:textStyle="bold"
+                    android:text="@string/taxis"
                     android:textSize="@dimen/textPrimary"
+                    android:textStyle="bold"
                     app:layout_constraintEnd_toStartOf="@+id/divider6"
                     app:layout_constraintStart_toEndOf="@+id/divider5"
                     app:layout_constraintTop_toBottomOf="@+id/cardServices" />
