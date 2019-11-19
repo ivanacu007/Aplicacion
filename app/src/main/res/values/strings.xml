@@ -7,7 +7,7 @@
     <string name="nav_header_desc">Navigation header</string>
     <string name="action_settings">Settings</string>
 
-    <string name="menu_home">Home</string>
+    <string name="menu_home">(App name here)</string>
     <string name="menu_gallery">Gallery</string>
     <string name="menu_slideshow">Slideshow</string>
     <string name="menu_tools">Tools</string>
@@ -29,4 +29,7 @@
     <string name="meca">Mecánica</string>
     <string name="vet">Veterinario</string>
     <string name="plumber">Plomería</string>
+    <string name="title_activity_food_menu">Alimentos y bebidas</string>
+    <string name="title_activity_services_menu">Otros servicios</string>
+    <string name="title_activity_carriage_menu">Servicios de transporte</string>
 </resources>

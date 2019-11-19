@@ -1,5 +1,6 @@
 package com.example.aplicacion;
 
+import android.content.Intent;
 import android.os.Bundle;
 
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
@@ -47,7 +48,7 @@ public class MainActivity extends AppCompatActivity {
 
         Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
-        setActionBarTitle("Aplicacion");
+//        setActionBarTitle("Aplicacion");
         flipperLayout = findViewById(R.id.flipper);
 
         for(int i = 0; i < img.length; i++){
@@ -59,18 +60,26 @@ public class MainActivity extends AppCompatActivity {
 
         CardView card = findViewById(R.id.cardFood);
         CardView cardServ = findViewById(R.id.cardServices);
+        CardView cardTax = findViewById(R.id.cardTaxi);
         card.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 tarjeta = 1;
-                openFragment(tarjeta);
+                openActivities(tarjeta);
             }
         });
         cardServ.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 tarjeta = 2;
-                openFragment(tarjeta);
+                openActivities(tarjeta);
+            }
+        });
+        cardTax.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                tarjeta = 3;
+                openActivities(tarjeta);
             }
         });
 
@@ -96,26 +105,25 @@ public class MainActivity extends AppCompatActivity {
                 R.id.nav_tools, R.id.nav_share, R.id.nav_send)
                 .setDrawerLayout(drawer)
                 .build();
-//        NavController navController = Navigation.findNavController(this, R.id.nav_host_fragment);
-//        NavigationUI.setupActionBarWithNavController(this, navController, mAppBarConfiguration);
-//        NavigationUI.setupWithNavController(navigationView, navController);
+        NavController navController = Navigation.findNavController(this, R.id.nav_host_fragment);
+        NavigationUI.setupActionBarWithNavController(this, navController, mAppBarConfiguration);
+        NavigationUI.setupWithNavController(navigationView, navController);
     }
 
-    public void openFragment(Integer valor) {
-        SubMenu fragment = new SubMenu();
-        SubMenuServ fragmentServ = new SubMenuServ();
-        Comida comida = new Comida();
-        FragmentManager fragmentManager = getSupportFragmentManager();
-        FragmentTransaction transaction = fragmentManager.beginTransaction();
+    public void openActivities(Integer valor) {
+
+        Intent intent = new Intent(this, FoodMenu.class);
+        Intent intent2 = new Intent(this, ServicesMenu.class);
+        Intent intent3 = new Intent(this, CarriageMenu.class);
+
         if(valor == 1){
-            transaction.setCustomAnimations(R.anim.enter_to_right, R.anim.exit_to_right, R.anim.enter_to_right, R.anim.exit_to_right);
-            transaction.addToBackStack(null);
-            transaction.add(R.id.fragment_container, fragment, "SUB_MEN").commit();
+            startActivity(intent);
         }
         if(valor == 2){
-            transaction.setCustomAnimations(R.anim.enter_to_right, R.anim.exit_to_right, R.anim.enter_to_right, R.anim.exit_to_right);
-            transaction.addToBackStack(null);
-            transaction.add(R.id.fragment_container, fragmentServ, "SUB_MENU_SERV").commit();
+            startActivity(intent2);
+        }
+        if(valor == 3){
+            startActivity(intent3);
         }
 
     }
