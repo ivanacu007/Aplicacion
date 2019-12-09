@@ -20,6 +20,9 @@ import androidx.navigation.ui.AppBarConfiguration;
 import androidx.navigation.ui.NavigationUI;
 
 import com.google.android.material.navigation.NavigationView;
+import com.google.firebase.FirebaseApp;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
 
 
 import androidx.drawerlayout.widget.DrawerLayout;
@@ -29,6 +32,7 @@ import androidx.appcompat.widget.Toolbar;
 import androidx.viewpager.widget.ViewPager;
 
 import android.view.Menu;
+import android.view.inputmethod.InputMethodManager;
 
 import technolifestyle.com.imageslider.FlipperLayout;
 import technolifestyle.com.imageslider.FlipperView;
@@ -39,17 +43,20 @@ public class MainActivity extends AppCompatActivity {
     private ViewPager vp;
     private int tarjeta = 0;
     private FlipperLayout flipperLayout;
+    FirebaseDatabase database;
+    DatabaseReference databaseReference;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        int img [] = {R.drawable.hamburguer, R.drawable.excavadora, R.drawable.cake};
+        int img [] = {R.drawable.hamburguer, R.drawable.excavadora, R.drawable.cake, R.drawable.promo, R.drawable.monta, R.drawable.monta2};
 
         Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 //        setActionBarTitle("Aplicacion");
         flipperLayout = findViewById(R.id.flipper);
+        iniciarFirebase();
 
         for(int i = 0; i < img.length; i++){
             FlipperView flipperView = new FlipperView(getBaseContext());
@@ -82,7 +89,6 @@ public class MainActivity extends AppCompatActivity {
                 openActivities(tarjeta);
             }
         });
-
 
         FloatingActionButton fab = findViewById(R.id.fab);
         fab.setOnClickListener(new View.OnClickListener() {
@@ -126,6 +132,20 @@ public class MainActivity extends AppCompatActivity {
             startActivity(intent3);
         }
 
+    }
+
+    public void iniciarFirebase(){
+        FirebaseApp.initializeApp(this);
+        database = FirebaseDatabase.getInstance();
+        databaseReference = database.getReference();
+    }
+    public void closeKeyB(){
+        try {
+            InputMethodManager imm = (InputMethodManager)getSystemService(INPUT_METHOD_SERVICE);
+            imm.hideSoftInputFromWindow(getCurrentFocus().getWindowToken(), 0);
+        } catch (Exception e) {
+            // TODO: handle exception
+        }
     }
 
 //    @Override

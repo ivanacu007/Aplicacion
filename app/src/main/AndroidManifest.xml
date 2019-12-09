@@ -12,9 +12,13 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity
+            android:name=".FondasMenu"
+            android:label="@string/title_activity_fondas_menu"
+            android:theme="@style/AppTheme.NoActionBar"></activity>
+        <activity
             android:name=".CarriageMenu"
             android:label="@string/title_activity_carriage_menu"
-            android:theme="@style/AppTheme.NoActionBar"></activity>
+            android:theme="@style/AppTheme.NoActionBar" />
         <activity
             android:name=".ServicesMenu"
             android:label="@string/title_activity_services_menu"
